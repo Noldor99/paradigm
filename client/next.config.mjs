@@ -2,9 +2,9 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      { hostname: "localhost" },
-      { hostname: "https://pattern-85d1-khrbwfqay-noldor99.vercel.app" },
-      { hostname: "loremflickr.com" },
+      { hostname: 'localhost' },
+      { hostname: 'https://paradigm-qbzl.onrender.com/' },
+      { hostname: 'loremflickr.com' },
     ],
   },
 }

@@ -21,7 +21,7 @@ async function start() {
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
 
   app.use((req, res, next) => {
-    const allowedOrigins = ['https://chat-client-86ng.onrender.com', 'http://localhost:7777'];
+    const allowedOrigins = ['https://paradigm-sand.vercel.app', 'http://localhost:7777'];
 
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
