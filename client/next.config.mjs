@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { hostname: 'localhost' },
-      { hostname: 'https://paradigm-qbzl.onrender.com/' },
+      { hostname: 'paradigm-qbzl.onrender.com' },
       { hostname: 'loremflickr.com' },
     ],
   },
