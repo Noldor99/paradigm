@@ -8,6 +8,9 @@ import { PersonSeed } from './generation/personSeed'
 import { PortfolioSeed } from './generation/portfolioSeed'
 import { GeneralSeeder } from './generation/generalSeed'
 import { ContentSeed } from './generation/contentSeed'
+import { FeedbackSeed } from './generation/feedbackSeed'
+import { PerspectiveSeed } from './generation/perspectiveSeed'
+import { TagSeed } from './generation/tagSeed'
 
 const isProdaction = process.env.NODE_ENV === 'prodaction'
 
@@ -24,16 +27,25 @@ export class SeedService {
     private readonly portfolioSeed: PortfolioSeed,
     private readonly generalSeed: GeneralSeeder,
     private readonly contentSeed: ContentSeed,
+    private readonly feedbackSeed: FeedbackSeed,
+    private readonly tagSeed: TagSeed,
+    private readonly perspectiveSeed: PerspectiveSeed,
+
 
   ) {
     this.seeders = isProdaction
       ? [
-        // this.resetTotalDataSeed,
+        this.resetTotalDataSeed,
         this.roleSeed,
         this.userSeed,
         this.personSeed,
+        this.portfolioSeed,
+        this.generalSeed,
         this.generalSeed,
         this.contentSeed,
+        this.feedbackSeed,
+        this.tagSeed,
+        this.perspectiveSeed,
 
 
       ]
@@ -46,6 +58,9 @@ export class SeedService {
         this.generalSeed,
         this.generalSeed,
         this.contentSeed,
+        this.feedbackSeed,
+        this.tagSeed,
+        this.perspectiveSeed,
 
       ]
   }

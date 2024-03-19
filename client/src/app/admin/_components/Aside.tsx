@@ -20,6 +20,9 @@ export const Aside = () => {
     { title: 'Portfolio', path: '/admin/portfolio', role: RolesEnum.MODER },
     { title: 'Content', path: '/admin/content', role: RolesEnum.MODER },
     { title: 'Moderators', path: '/admin/moderators', role: RolesEnum.ADMIN },
+    { title: 'Feedback', path: '/admin/feedback', role: RolesEnum.ADMIN },
+    { title: 'Perspective', path: '/admin/perspective', role: RolesEnum.MODER },
+    { title: 'Tag', path: '/admin/tag', role: RolesEnum.MODER },
   ]
 
   if (!user) {

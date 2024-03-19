@@ -10,6 +10,7 @@ export enum FileType {
   PERSON = 'personImg',
   GENERAL = 'generalImg',
   PORTFOLIO = 'portfolioImg',
+  PERSPECTIVE = 'perspectiveImg',
 }
 
 const isDevelopment = process.env.NODE_ENV === 'development'

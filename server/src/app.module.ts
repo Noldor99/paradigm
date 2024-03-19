@@ -3,7 +3,6 @@ import { ServeStaticModule } from "@nestjs/serve-static";
 import * as path from 'path';
 import { DatabaseModule } from "./database/database.module";
 import { MiddlewareConsumer, NestModule } from '@nestjs/common'
-
 import { JwtModule } from '@nestjs/jwt'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { CookiesMiddleware } from './auth/cookies.middleware';
@@ -15,6 +14,9 @@ import { FilesModule } from './files/files.module';
 import { GeneralModule } from './general/general.module';
 import { ContentModule } from './content/content.module';
 import { PortfolioModule } from './portfolio/portfolio.module';
+import { FeedbackModule } from './feedback/feedback.module';
+import { PerspectiveModule } from './perspective/perspective.module';
+import { TagModule } from './tag/tag.module';
 
 @Module({
   controllers: [],
@@ -44,7 +46,10 @@ import { PortfolioModule } from './portfolio/portfolio.module';
     FilesModule,
     GeneralModule,
     ContentModule,
-    PortfolioModule
+    PortfolioModule,
+    FeedbackModule,
+    PerspectiveModule,
+    TagModule,
   ]
 })
 

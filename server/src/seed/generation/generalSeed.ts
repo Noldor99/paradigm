@@ -17,7 +17,7 @@ export class GeneralSeeder implements SeederInterface {
       contact: {
         information: "info@paradigm.xyz",
         pressInquiries: "press@paradigm.xyz",
-        investorInquiries: "inv_inquiries@paradigm.xyz",
+        investorInquiries: "inquiries@paradigm.xyz",
         linkedin: "https://ua.linkedin.com/",
         twitter: "https://twitter.com/?lang=en"
       },

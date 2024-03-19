@@ -22,13 +22,22 @@ import { GeneralSeeder } from './generation/generalSeed'
 import { Content } from 'src/content/content.entity'
 import { ContentModule } from 'src/content/content.module'
 import { ContentSeed } from './generation/contentSeed'
+import { FeedbackModule } from 'src/feedback/feedback.module'
+import { FeedbackSeed } from './generation/feedbackSeed'
+import { Feedback } from 'src/feedback/feedback.entity'
+import { Perspective } from 'src/perspective/perspective.entity'
+import { Tag } from 'src/tag/tag.entity'
+import { PerspectiveModule } from 'src/perspective/perspective.module'
+import { TagModule } from 'src/tag/tag.module'
+import { PerspectiveSeed } from './generation/perspectiveSeed'
+import { TagSeed } from './generation/tagSeed'
 
 
 @Module({
   imports: [
     DatabaseModule,
     TypeOrmModule.forFeature(
-      [Role, User, Person, General, Contact, Portfolio, Content]
+      [Role, User, Person, General, Contact, Portfolio, Content, Feedback, Perspective, Tag]
     ),
     UserModule,
     AuthModule,
@@ -38,6 +47,9 @@ import { ContentSeed } from './generation/contentSeed'
     PortfolioModule,
     GeneralModule,
     ContentModule,
+    FeedbackModule,
+    PerspectiveModule,
+    TagModule
 
   ],
   providers: [
@@ -49,6 +61,9 @@ import { ContentSeed } from './generation/contentSeed'
     PortfolioSeed,
     GeneralSeeder,
     ContentSeed,
+    FeedbackSeed,
+    PerspectiveSeed,
+    TagSeed
   ],
   exports: [SeedService]
 

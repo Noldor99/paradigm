@@ -20,7 +20,7 @@ const AdminPage = () => {
     <div className="container-sm">
       <div className="paper-rounded flex justify-between">
         <Link href="/login">Login</Link>
-        <Link href="/admin/main">Home</Link>
+        {user && <Link href="/admin/main">Home</Link>}
       </div>
     </div>
   )

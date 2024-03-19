@@ -14,6 +14,7 @@ export const Header = () => {
     { name: 'Contact', url: '/contact' },
     { name: 'Writing', url: '/writing' },
     { name: 'Team', url: '/team' },
+    { name: 'Perspective', url: '/perspective' },
     { name: 'Admin panel', url: '/admin' },
   ]
 

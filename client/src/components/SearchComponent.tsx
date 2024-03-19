@@ -27,7 +27,7 @@ const SearchComponent = ({ search, link }: SearchComponentProps) => {
       initialRender.current = false
       return
     }
-
+    if (debouncedValue === undefined) return
     if (!debouncedValue) {
       router.push(`/${link}`)
     } else {

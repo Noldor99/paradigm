@@ -47,9 +47,9 @@ const PersonByIdPage = async ({ params }: IPersonPage) => {
 
   return (
     <section className="container-sm">
-      <div className="">
+      <div className="paper-rounded">
         <div className="flex flex-col justify-start gap-4">
-          <div className="mt-6 w-full">
+          <div className="m-auto mt-6 w-full sm:w-[400px]">
             <ImgPerson imgData={person} />
           </div>
           <span className="text-xs text-muted">

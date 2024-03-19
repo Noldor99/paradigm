@@ -2,6 +2,7 @@ import { ReturnType } from '@/actions/client/generalAction'
 import { generalPrefetch } from '@/actions/server/generalPrefetch'
 
 import ContactList from './_components/ContactList'
+import { FeedbackForm } from './_components/FeedbackForm'
 import Social from './_components/Social'
 
 export const generateMetadata = async () => {
@@ -27,6 +28,8 @@ const ContactPage = async () => {
               <Social links={result.contact} />
             </div>
           </div>
+          <p className="text-h2 mb-2 mt-5">Contact form:</p>
+          <FeedbackForm />
         </div>
       </div>
     </section>
