@@ -7,6 +7,7 @@ import {
   Patch,
   UseInterceptors,
   UploadedFile,
+  UseGuards,
 } from '@nestjs/common';
 import { GeneralService } from './general.service';
 import { UpdateGeneralDto } from './dto/update-general.dto';
@@ -14,6 +15,7 @@ import { ApiConsumes, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { ReturnType } from './general';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { FileType } from 'src/files/files.service';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @ApiTags('general')
 @Controller('general')
@@ -39,6 +41,7 @@ export class GeneralController {
   }
 
   @Patch()
+  @UseGuards(AuthGuard)
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(FileInterceptor(FileType.GENERAL))
   async update(

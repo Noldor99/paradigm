@@ -11,6 +11,7 @@ import {
   ValidationPipe,
   UseInterceptors,
   UploadedFile,
+  UseGuards,
 } from '@nestjs/common';
 import { PerspectiveService } from './perspective.service';
 import { CreatePerspectiveDto } from './dto/create-perspective.dto';
@@ -19,6 +20,7 @@ import { ApiConsumes, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { QueryPerspectiveParamsDto } from './dto/query-perspective-params.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { FileType } from 'src/files/files.service';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @ApiTags('perspective')
 @Controller('perspective')
@@ -27,6 +29,7 @@ export class PerspectiveController {
 
   @Post()
   @UsePipes(ValidationPipe)
+  @UseGuards(AuthGuard)
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(FileInterceptor(FileType.PERSPECTIVE))
   create(@Body() createPerspectiveDto: CreatePerspectiveDto,
@@ -50,6 +53,7 @@ export class PerspectiveController {
   }
 
   @Patch(':id')
+  @UseGuards(AuthGuard)
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(FileInterceptor(FileType.PERSPECTIVE))
   async update(

@@ -9,6 +9,7 @@ import {
   Patch,
   UsePipes,
   ValidationPipe,
+  UseGuards,
 } from '@nestjs/common';
 import { TagService } from './tag.service';
 import { CreateTagDto } from './dto/create-tag.dto';
@@ -16,6 +17,7 @@ import { UpdateTagDto } from './dto/update-tag.dto';
 import { ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { QueryTagParamsDto } from './dto/query-tag-params.dto';
 import { TagVariant } from './type';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @ApiTags('tag')
 @Controller('tag')
@@ -24,6 +26,7 @@ export class TagController {
 
   @Post()
   @UsePipes(ValidationPipe)
+  @UseGuards(AuthGuard)
   create(@Body() createTagDto: CreateTagDto) {
     console.log(createTagDto)
     return this.tagService.create(createTagDto);
@@ -51,6 +54,7 @@ export class TagController {
   }
 
   @Patch(':id')
+  @UseGuards(AuthGuard)
   async update(
     @Param('id') tagId: string,
     @Body() updateTagDto: UpdateTagDto,

@@ -10,6 +10,7 @@ import {
   UseInterceptors,
   Req,
   UploadedFile,
+  UseGuards,
 } from '@nestjs/common';
 import { PortfolioService } from './portfolio.service';
 import { CreatePortfolioDto } from './dto/create-portfolio.dto';
@@ -18,6 +19,7 @@ import { ApiConsumes, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { QueryPortfolioParamsDto } from './dto/query-portfolio-params.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { FileType } from 'src/files/files.service';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @ApiTags('portfolio')
 @Controller('portfolio')
@@ -26,6 +28,7 @@ export class PortfolioController {
 
   @Post()
   @ApiConsumes('multipart/form-data')
+  @UseGuards(AuthGuard)
   @UseInterceptors(FileInterceptor(FileType.PORTFOLIO))
   create(
     @Req() req,
@@ -51,6 +54,7 @@ export class PortfolioController {
   }
 
   @Patch(':id')
+  @UseGuards(AuthGuard)
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(FileInterceptor(FileType.PORTFOLIO))
   async update(
