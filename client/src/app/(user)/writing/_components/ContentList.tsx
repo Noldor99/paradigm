@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import React from 'react'
 
-import SearchComponent from '@/components/SearchComponent'
+import Search from '@/components/Search'
 import { SPagination } from '@/components/_onlyServer/SPagination'
 import { SToggle } from '@/components/_onlyServer/SToggle'
 import { Button } from '@/components/ui/button'
@@ -75,7 +75,7 @@ export const ContentList = async ({ searchParams }: PageProps) => {
             { value: 'news', text: 'News' },
           ]}
         />
-        <SearchComponent link="writing" />
+        <Search />
       </div>
       <div className={cn('flex flex-col gap-4')}>
         {data.contents.map((content, i) => (
@@ -83,7 +83,8 @@ export const ContentList = async ({ searchParams }: PageProps) => {
             <div className="flex flex-col px-6 pb-0">
               <div className="text-h3 mb-4 line-clamp-6">{content.title}</div>
               <div className="text-s mb-1 line-clamp-6">{content.description}</div>
-              <div className="flex flex-1 items-center justify-end py-6">
+              <div className="flex flex-1 items-center justify-between py-6">
+                <p className="text-muted">{content.variant}</p>
                 <Button size={'sm'} asChild>
                   <Link href={`/writing/${content.router}`}>Read more</Link>
                 </Button>

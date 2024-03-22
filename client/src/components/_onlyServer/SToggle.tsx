@@ -40,7 +40,7 @@ export const SToggle = (props: FilterToggleProps) => {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-3 ">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-3">
       {defaultArrValue.map(({ value, text, icon }) => (
         <Link key={value} className="flex items-center" href={`?${buildQueryParam(value)}`}>
           <Button

@@ -10,6 +10,7 @@ const isDevelopment = process.env.NODE_ENV === 'development'
       isGlobal: true,
       envFilePath: isDevelopment ? `.development.env` : '.env'
     }),
+
     TypeOrmModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
@@ -23,6 +24,7 @@ const isDevelopment = process.env.NODE_ENV === 'development'
       }),
       inject: [ConfigService],
     }),
+
   ],
 })
 export class DatabaseModule { }

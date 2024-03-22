@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import SearchComponent from '@/components/SearchComponent'
+import Search from '@/components/Search'
 import { SPagination } from '@/components/_onlyServer/SPagination'
 import ImgPerspective from '@/components/imgWrap/ImgPerspective'
 import { Badge } from '@/components/ui/badge'
@@ -60,7 +60,7 @@ export const PerspectiveList = async ({ searchParams }: PageProps) => {
       <p className="text-h2">Opportunities in the Paradigm perspective</p>
       <TagSearch tagData={tagsData.tags.filter((tag) => tag.countUse > 0)} link="perspective" />
       <div className="paper-rounded flex flex-col gap-6 sm:flex-row ">
-        <SearchComponent link="perspective" />
+        <Search />
       </div>
       <div className={cn('grid grid-cols-1 gap-3')}>
         {data.perspectives.map((perspective, i) => (

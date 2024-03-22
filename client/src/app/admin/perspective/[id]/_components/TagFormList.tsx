@@ -8,7 +8,7 @@ import { useFieldArray, useFormContext } from 'react-hook-form'
 import { IconClipboardPlus, IconX } from '@tabler/icons-react'
 
 import CollapsibleButton from '@/components/CollapsibleButton'
-import WrapSearch from '@/components/WrapSearch'
+import Search from '@/components/Search'
 import SmallCardBage from '@/components/card/SmallCardBage'
 import { FormField, FormItem } from '@/components/ui/form'
 
@@ -72,7 +72,7 @@ const TagsFormList = () => {
             </div>
           ))}
         </CollapsibleButton>
-        <WrapSearch />
+        <Search />
         <div className="flex flex-wrap gap-3">
           {tags?.tags
             .filter((item) => !fields.some((tag: any) => tag.name === item.name))
